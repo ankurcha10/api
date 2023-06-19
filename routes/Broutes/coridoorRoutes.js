@@ -10,3 +10,4 @@ module.exports = function(app) {
     next();
   });
   app.get("/api/bms/coridoor/:deviceid/:devicetype/:v1/:c1/:v2/:c2/:v3/:c3/:systemstatus/:faultdetction",controller.addCoridoor)}
+

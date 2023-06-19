@@ -5,6 +5,11 @@ const formRoute = require("./routes/formRoute");
 const userRoutes = require('./routes/users');
 const authRoutes= require("./routes/auth")
 const profileRoute= require("./routes/profile")
+const coridoor = require("./routes/Broutes/coridoor")
+const flat = require("./routes/Broutes/flat")
+const Floor = require("./routes/Broutes/floor")
+const main = require("./routes/Broutes/main")
+
 
 
 
@@ -44,6 +49,11 @@ app.use("/submit-form", formRoute);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoute);
+app.use("/", coridoor)
+app.use("/", flat)
+app.use("/", Floor)
+
+app.use("/", main)
 
 
 
@@ -53,7 +63,9 @@ app.use("/api/profile", profileRoute);
 require("./routes/Broutes/mainRoute")(app)
 require("./routes/Broutes/floorRoute")(app)
 require('./routes/Broutes/flatRoute')(app)
-require("./routes//Broutes/coridoorRoutes")(app)
+require("./routes/Broutes/coridoorRoutes")(app)
+
+
 
 
 app.use(

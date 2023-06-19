@@ -10,6 +10,8 @@ exports.addCoridoor = (req, res) => {
   const c2 = req.params['c2'];
   const c3 = req.params['c3'];
   const systemstatus = req.params['systemstatus'];
+  const faultdetction = req.params['faultdetction'];
+
 
   if (!deviceid)
     return res.status(500).send({ message: "Please provide a unique device id" });
@@ -41,7 +43,8 @@ exports.addCoridoor = (req, res) => {
       c1: c1,
       c2: c2,
       c3: c3,
-      systemstatus: systemstatus
+      systemstatus: systemstatus,
+      faultdetction:faultdetction
     };
 
     // Create and save the data to the database
@@ -56,3 +59,14 @@ exports.addCoridoor = (req, res) => {
     res.status(404).json({ message: error.message });
   }
 }
+
+
+
+exports.getCoridoorData = async (req, res) => {
+  try {
+    const coridoorData = await Coridoor.find().lean();
+    res.status(200).json(coridoorData);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
