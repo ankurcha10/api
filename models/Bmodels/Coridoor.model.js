@@ -43,7 +43,7 @@ const coridoorSchema = new mongoose.Schema({
   
   created_at: {
     type: String,
-    default: () => moment().format('YYYY-MM-DD HH:mm:ss')
+    default: () => moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss')
   }
 });
 
