@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const moment = require("moment")
-
+c
 // Define the schema
 const coridoorSchema = new mongoose.Schema({
   deviceid: {
@@ -43,7 +43,7 @@ const coridoorSchema = new mongoose.Schema({
   
   created_at: {
     type: String,
-    default: () => moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss')
+    default: () => moment().utcOffset("+05:30").format('YYYY-MM-DD HH:mm:ss')
   }
 });
 

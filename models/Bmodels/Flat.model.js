@@ -28,13 +28,14 @@ const flatSchema = new mongoose.Schema({
   },
 
   
+ 
   created_at: {
     type: String,
-    default: () => moment().format('YYYY-MM-DD HH:mm:ss')
+    default: () => moment().utcOffset("+05:30").format('YYYY-MM-DD HH:mm:ss')
   }
+});
   
 
-});
 
 // Create the model
 const Flat = mongoose.model('Flat', flatSchema);
