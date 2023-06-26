@@ -9,6 +9,7 @@ exports.addCoridoor = (req, res) => {
   const c1 = req.params['c1'];
   const c2 = req.params['c2'];
   const c3 = req.params['c3'];
+  const power = req.params['power']
   const systemstatus = req.params['systemstatus'];
   const faultdetction = req.params['faultdetction'];
 
@@ -44,7 +45,8 @@ exports.addCoridoor = (req, res) => {
       c2: c2,
       c3: c3,
       systemstatus: systemstatus,
-      faultdetction:faultdetction
+      faultdetction:faultdetction,
+      power: power
     };
 
     // Create and save the data to the database

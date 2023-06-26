@@ -32,6 +32,9 @@ const coridoorSchema = new mongoose.Schema({
   c3: {
     type: Number
   },
+  power:{
+    type: Number
+  },
   systemstatus: {
     type: String
   },
